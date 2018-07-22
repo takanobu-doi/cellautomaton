@@ -10,6 +10,7 @@
 class Automaton
 {
 public:
+  Automaton();
   Automaton(int intrand);
   ~Automaton();
   int foward();

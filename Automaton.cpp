@@ -2,6 +2,18 @@
 #include "Cell.hpp"
 #include <iostream>
 
+Automaton::Automaton()
+{
+  for(int i=0;i<ADD_MAX;i++){
+    m_cell[i].s_life(off);
+    if(i==(ADD_MAX/2)){
+      m_cell[i].s_life(on);
+    }
+    m_cell[i].s_address(i);
+  }
+  m_step = 0;
+}
+
 Automaton::Automaton(int intrand)
 {
   std::srand(intrand);
@@ -19,7 +31,8 @@ Automaton::~Automaton()
 int Automaton::foward()
 {
   Cell temp_cell[ADD_MAX];
-  
+
+  /*
   temp_cell[0].s_life(m_cell[0].on_off(m_cell[ADD_MAX-1],m_cell[0],m_cell[1]));
   temp_cell[0].s_address(0);
   for(int i=1;i<ADD_MAX-1;i++){
@@ -28,6 +41,12 @@ int Automaton::foward()
   }
   temp_cell[ADD_MAX-1].s_life(m_cell[ADD_MAX-1].on_off(m_cell[ADD_MAX-2],m_cell[ADD_MAX-1],m_cell[0]));
   temp_cell[ADD_MAX-1].s_address(ADD_MAX-1);
+  */
+
+  for(int i=0;i<ADD_MAX;i++){
+    temp_cell[i].s_life(m_cell[i].on_off());
+    temp_cell[i].s_address(i);
+  }
   
   m_step++;
 

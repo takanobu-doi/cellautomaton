@@ -1,12 +1,13 @@
 #include "Cell.hpp"
 #include "Automaton.hpp"
 #include <iostream>
+#include <time.h>
 #include <cstdlib>
 
 int main()
 {
-  Automaton maton(1);
-
+  //Automaton maton(time(NULL));
+  Automaton maton;
 
   maton.draw(std::cout);
     

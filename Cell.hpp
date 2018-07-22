@@ -1,7 +1,7 @@
 #ifndef _CELL_HPP_
 #define _CELL_HPP_
 
-const int ADD_MAX = 35;
+const int ADD_MAX = 30;
 enum LIFE{off,on};
 
 class Cell
